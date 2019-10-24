@@ -1,0 +1,34 @@
+@import '../../../node_modules/bootstrap/scss/_functions.scss';
+@import '../../../node_modules/bootstrap/scss/_variables.scss';
+@import '../../../node_modules/bootstrap/scss/_mixins.scss';
+
+
+
+html {
+  font-size: 16px;
+}
+
+$enable-gradients: true ;
+
+
+
+$border-radius: .7rem;
+
+
+$orange: #FF5A09;
+
+
+$theme-colors: (
+        "lighter": $gray-400,
+        "orange": $orange,
+        "history": #643843,
+        "interview": #8C932B,
+        "novelties": #A93F43,
+        "dark": #20252a,
+        "red": $red,
+        "green": $green,
+        "blue": $blue,
+);
+
+$card-cap-bg: $light;
+
