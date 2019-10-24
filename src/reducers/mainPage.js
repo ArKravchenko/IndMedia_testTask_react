@@ -1,4 +1,3 @@
-
 import {
   SET_AUTHORS,
   SET_ARTICLES,
@@ -6,6 +5,7 @@ import {
   SET_ARTICLES_STATUS,
   SET_AUTHORS_FAIL,
   SET_ARTICLES_FAIL,
+  SET_READ_ARTICLE,
 } from '../actions/mainPage.js'
 
 const INITIAL_STATE = {
@@ -15,6 +15,7 @@ const INITIAL_STATE = {
   articlesLoading: false,
   articlesLoadFail: false,
   articles: [],
+  readArticles:[],
 }
 
 
@@ -66,6 +67,20 @@ export default function reducer(state = INITIAL_STATE, action) {
         state,
         {
           articlesLoadFail: action.data,
+        },
+      );
+    case SET_READ_ARTICLE:
+      let list;
+      if (state.readArticles.indexOf(action.data)!=-1) {
+         list = [...state.readArticles];
+      } else {
+          list = [...state.readArticles, action.data];
+      }
+      return Object.assign(
+        {},
+        state,
+        {
+          readArticles: list,
         },
       );
 

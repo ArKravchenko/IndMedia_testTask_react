@@ -8,6 +8,8 @@ export const SET_AUTHORS_STATUS = 'SET_ARTICLES_STATUS';
 export const SET_AUTHORS_FAIL = 'SET_AUTHORS_FAIL';
 export const SET_ARTICLES_FAIL = 'SET_ARTICLES_FAIL';
 
+export const SET_READ_ARTICLE = 'SET_READ_ARTICLE';
+
 export const setAuthors = (data) => ({
   type: SET_AUTHORS,
   data,
@@ -36,4 +38,9 @@ export const setAuthorsFail = (data) => ({
 export const setArticlesFail = (data) => ({
   type: SET_ARTICLES_FAIL,
   data,
+});
+
+export const setReadArticle = (data) => ({
+    type: SET_READ_ARTICLE,
+    data,
 });

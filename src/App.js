@@ -92,12 +92,12 @@ class App extends Component {
             />
             <Route
               exact
-              path="/article"
+              path="/article_:id"
               render={(routeProps) => <Article {...routeProps} />}
             />
             <Route
               exact
-              path="/author"
+              path="/author_:id"
               render={(routeProps) => <Author {...routeProps} />}
 
             />
