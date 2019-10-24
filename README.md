@@ -1,3 +1,3 @@
 # IndMedia
- yarn install
+ yarn install &&
  yarn serve-wp
