@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
-import './scss/components/App.scss';
+
 import {store} from "./config/configureStore";
 
 import {
@@ -9,9 +9,9 @@ import {
 
 import { Provider, connect } from 'react-redux';
 
-import Article from './Article';
-import Author from './Author';
-import Main from './Main';
+import Article from './components/Article';
+import Author from './components/Author';
+import Main from './components/Main';
 
 import { setAuthors, setArticles, setArticlesFail, setArticlesStatus, setAuthorsFail, setAuthorsStatus } from './actions/mainPage';
 
