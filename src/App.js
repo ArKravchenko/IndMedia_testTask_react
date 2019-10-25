@@ -94,17 +94,17 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={(routeProps) => <Main {...routeProps} />}
+              render={(routeProps) => <Main {...routeProps} fallback={<div className="container m-0 text-center d-flex flex-column justify-content-center" style={{height:'100vh'}}>Loading...</div>} />}
             />
             <Route
               exact
               path="/article_:id"
-              render={(routeProps) => <Article {...routeProps} />}
+              render={(routeProps) => <Article {...routeProps} fallback={<div className="container m-0 text-center d-flex flex-column justify-content-center" style={{height:'100vh'}}>Loading...</div>}/>}
             />
             <Route
               exact
               path="/author_:id"
-              render={(routeProps) => <Author {...routeProps} />}
+              render={(routeProps) => <Author {...routeProps} fallback={<div className="container m-0 text-center d-flex flex-column justify-content-center" style={{height:'100vh'}}>Loading...</div>}/>}
 
             />
             <Route render={(routeProps) => (
