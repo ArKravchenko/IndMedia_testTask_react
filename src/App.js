@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import loadable from '@loadable/component';
 
 import {store} from "./config/configureStore";
 
@@ -9,9 +9,15 @@ import {
 
 import { Provider, connect } from 'react-redux';
 
-import Article from './components/Article';
-import Author from './components/Author';
-import Main from './components/Main';
+// import Article from './components/Article';
+// import Author from './components/Author';
+// import Main from './components/Main';
+
+const Article = loadable(() => import('./components/Article'));
+const Author = loadable(() => import('./components/Author'));
+const Main = loadable(() => import('./components/Main'));
+
+
 
 import { setAuthors, setArticles, setArticlesFail, setArticlesStatus, setAuthorsFail, setAuthorsStatus } from './actions/mainPage';
 

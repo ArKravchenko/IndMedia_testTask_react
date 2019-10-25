@@ -4,5 +4,6 @@
 //      {"targets": "> 0.25%, not dead"}
     ],
 
-  ]
+  ],
+  "plugins": ["@babel/syntax-dynamic-import"]
 }
