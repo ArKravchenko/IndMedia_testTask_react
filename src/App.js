@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import loadable from '@loadable/component';
+import React, { Component, Suspense } from 'react';
+import loadable, {lazy} from '@loadable/component';
 
 import {store} from "./config/configureStore";
 
@@ -13,9 +13,9 @@ import { Provider, connect } from 'react-redux';
 // import Author from './components/Author';
 // import Main from './components/Main';
 
-const Article = loadable(() => import('./components/Article'));
-const Author = loadable(() => import('./components/Author'));
-const Main = loadable(() => import('./components/Main'));
+const Article = lazy(() => import('./components/Article'));
+const Author = lazy(() => import('./components/Author'));
+const Main = lazy(() => import('./components/Main'));
 
 
 
@@ -86,6 +86,8 @@ class App extends Component {
 
 
   render() {
+
+    console.log(store.getState());
     return (
 
       <Provider store={store}>
@@ -94,17 +96,17 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={(routeProps) => <Main {...routeProps} />}
+              render={(routeProps) => <Suspense fallback={<div className="container m-0 text-center d-flex flex-column justify-content-center" style={{height:'100vh'}}>Loading...</div>}><Main {...routeProps} /></Suspense>}
             />
             <Route
               exact
               path="/article_:id"
-              render={(routeProps) => <Article {...routeProps} />}
+              render={(routeProps) => <Suspense fallback={<div className="container m-0 text-center d-flex flex-column justify-content-center" style={{height:'100vh'}}>Loading...</div>}><Article {...routeProps} /></Suspense>}
             />
             <Route
               exact
               path="/author_:id"
-              render={(routeProps) => <Author {...routeProps} />}
+              render={(routeProps) => <Suspense fallback={<div className="container m-0 text-center d-flex flex-column justify-content-center " style={{height:'100vh'}}>Loading...</div>}><Author {...routeProps} /></Suspense>}
 
             />
             <Route render={(routeProps) => (
